@@ -47,9 +47,9 @@ function App() {
 
       setStates(resultStates.data);
       setCovidData(covidData);
-      setStateWithMostCases(covidData.reduce((prev, current) => (prev.cases > current.cases) ? prev : current, initialState));
-      setStateWithMostDeaths(covidData.reduce((prev, current) => (prev.deaths > current.deaths) ? prev : current, initialState));
-      setStateWithMostSuspects(covidData.reduce((prev, current) => (prev.suspects > current.suspects) ? prev : current, initialState));
+      setStateWithMostCases(covidData.reduce((prev: CovidData, current: CovidData) => (prev.cases > current.cases) ? prev : current, initialState));
+      setStateWithMostDeaths(covidData.reduce((prev: CovidData, current: CovidData) => (prev.deaths > current.deaths) ? prev : current, initialState));
+      setStateWithMostSuspects(covidData.reduce((prev: CovidData, current: CovidData) => (prev.suspects > current.suspects) ? prev : current, initialState));
     };
 
     fetchDados();
